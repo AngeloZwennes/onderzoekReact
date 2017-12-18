@@ -1,0 +1,204 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background: #F8F8F8 !important;
+  color: #606468;
+  font: 87.5%/1.5em 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+.dashboard{
+  background:#f9f9f9;
+  height:100%;
+  width:100%;
+  bottom:0px;
+}
+
+.whitebox{
+  background:#fff;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.toprow{
+  min-height:150px;
+  margin-bottom:50px;
+}
+
+.largebox{
+  min-height:800px;
+  padding:20px;
+}
+.modulesspace{
+  padding-top:40px;
+}
+.bottomrow{
+  min-height:600px;
+}
+
+.box1{
+  padding:20px;
+  color:#fff;
+  background:#29a0d7;
+}
+.box2 {
+  padding: 20px;
+  color: #fff;
+  background: #59db75;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #313ccc;
+  height: 70px;
+  width: 100%;
+}
+
+
+.navbar h2{
+  width:200px;
+  padding-left:50px;
+  float:left;
+}
+
+
+.navbar .icons{
+  padding-top:10px;
+  padding-right:50px;
+}
+#settings {
+  float: right;
+  font-size: 3em;
+  color: white;
+  padding: 3px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+#dashboard {
+  cursor: pointer;
+  color: white;
+}
+#user {
+  float: right;
+  font-size: 3em;
+  color: white;
+  padding: 3px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+#logo {
+  float: left;
+  color: white;
+}
+
+/* Login */
+@charset "utf-8";
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+input {
+  border: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+after {
+  clear: both;
+}
+
+#logincontainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  width: 330px !important;
+  height: 300px !important;
+}
+
+#logincontainer form {
+  margin: auto;
+  padding: 22px 22px 22px 22px;
+  width: 100%;
+  border-radius: 5px;
+  background: #282e33;
+  border-top: 3px solid #434a52;
+  border-bottom: 3px solid #434a52;
+}
+
+#logincontainer form span {
+  background-color: #363b41;
+  border-radius: 3px 0px 0px 3px;
+  border-right: 3px solid #434a52;
+  color: #606468;
+  display: block;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+
+#logincontainer form input[type="email"] {
+  background-color: #3b4148;
+  border-radius: 0px 3px 3px 0px;
+  color: #a9a9a9;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 235px;
+  height: 50px;
+}
+
+#logincontainer form input[type="text"] {
+  background-color: #3b4148;
+  border-radius: 0px 3px 3px 0px;
+  color: #a9a9a9;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 235px;
+  height: 50px;
+}
+
+
+#logincontainer form input[type="password"] {
+  background-color: #3b4148;
+  border-radius: 0px 3px 3px 0px;
+  color: #a9a9a9;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 235px;
+  height: 50px;
+}
+
+.BtnSubmit {
+  background: #b5cd60;
+  border: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  text-align: center;
+}
+
+.BtnSubmit:hover {
+  background: #16aa56;
+}
+
+.emailError {
+  width: 70% !important;
+  color: red !important;
+  margin-bottom: 1em;
+  height: 50px;
+}
