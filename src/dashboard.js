@@ -1,6 +1,7 @@
 import React from 'react';
 import './dashboard.css';
 import Task from './task.js';
+import Photo from './photo.js';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 class Dashboard extends React.Component {
@@ -20,7 +21,7 @@ class Dashboard extends React.Component {
                             <div className="row">
                                 <div className="col-sm-6 ">
                                     <div className="box1 toprow">
-
+                                        <Photo />
                                     </div>
                                 </div>
                                 <div className="col-sm-6" >
@@ -35,8 +36,8 @@ class Dashboard extends React.Component {
                                     <div className="whitebox bottomrow">
                                     </div>
                                 </div>
-                                <div className="col-sm-6" >
-                                    <div className="whitebox bottomrow"><Task /></div>
+                                <div className="col-sm-6 whitebox bottomrow" >
+                                    <Task />
                                 </div>
                             </div>
                         </div>
