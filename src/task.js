@@ -28,7 +28,7 @@ class Task extends React.Component {
                 if(data.records) {
                     let tasks = data.records.map((task) => {
                         return (
-                            <ul class="list-group">
+                            <ul key={task.task_id} class="list-group">
                                 <li class="list-group-item clearfix">{task.task}
                                     <span class="pull-right button-group">
                                         <button type="button" class="btn btn-danger"
