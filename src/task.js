@@ -25,18 +25,25 @@ class Task extends React.Component {
             .then(results => {
                 return results.json();
             }).then(data => {
-            let tasks = data.records.map((task) => {
-                return(
-                    <ul class="list-group">
-                        <li class="list-group-item clearfix">{task.task}
-                            <span class="pull-right button-group">
-                                <button type="button" class="btn btn-danger" onClick={(e) => this.deleteRow(task.task_id, e)}><i class="fa fa-times" aria-hidden="true"></i></button>
-                            </span>
-                        </li>
-                    </ul>
-                )
-            });
-            this.setState({tasks: tasks});
+                if(data.records) {
+                    let tasks = data.records.map((task) => {
+                        return (
+                            <ul class="list-group">
+                                <li class="list-group-item clearfix">{task.task}
+                                    <span class="pull-right button-group">
+                                        <button type="button" class="btn btn-danger"
+                                                onClick={(e) => this.deleteRow(task.task_id, e)}><i class="fa fa-times"
+                                                                                                    aria-hidden="true"></i></button>
+                                    </span>
+                                </li>
+                            </ul>
+                        )
+                    });
+                    this.setState({tasks: tasks});
+                } else {
+                    this.setState({tasks: "No task found"});
+                }
+
         })
     }
 
