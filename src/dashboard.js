@@ -1,7 +1,7 @@
 import React from 'react';
 import './dashboard.css';
+import Task from './task.js';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-
 
 class Dashboard extends React.Component {
     render() {
@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
                                     </div>
                                 </div>
                                 <div class="col-sm-6" >
-                                    <div class="whitebox bottomrow"><app-task></app-task></div>
+                                    <div class="whitebox bottomrow"><Task /></div>
                                 </div>
                             </div>
                         </div>
