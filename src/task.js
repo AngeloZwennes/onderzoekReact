@@ -1,19 +1,22 @@
 import React from 'react';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-
+import Button from "react-bootstrap/es/Button";
+import Modal from "react-bootstrap/es/Modal";
 
 
 class Task extends React.Component {
+    value;
     constructor(){
         super();
         this.state = {
             tasks : [],
+            value: ''
         }
         this.getAllTask();
+        this.handleChange = this.handleChange.bind(this)
     }
 
     deleteRow(id, e) {
-        console.log('Hii'+ id);
         fetch('https://stefanbode.nl/api/task/delete.php?task_id=' + id)
             .then(results => {
                 this.getAllTask();
@@ -46,33 +49,53 @@ class Task extends React.Component {
         })
     }
 
+    saveTask(event) {
+        event.preventDefault();
+        this.setState({show: false});
+
+        fetch('https://stefanbode.nl/api/task/create.php?task=' + this.state.value)
+            .then(results => {
+                this.getAllTask();
+            })
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
     render() {
+        let close = () => this.setState({ show: false });
+
         return (
             <div>
                 <h3>Task</h3>
                 <div>{this.state.tasks}</div>
 
-                <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#addTask">
+                <Button onClick={() => this.setState({ show: true })}>
                     Add item
-                </button>
+                </Button>
 
-                <div className="modal fade" id="addTask" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 className="modal-title" id="myModalLabel">Add task</h4>
-                            </div>
-                            <form>
-                            <div className="modal-body">
-                                <input placeholder="add" name="New task name" className="form-control" />
-                            </div>
-                            <div className="modal-footer">
-                                <button type="submit" className="btn btn-primary">save Task</button>
-                            </div>
-                            </form>
-                        </div>
-                    </div>
+                <div className="static-modal">
+                    <Modal show={this.state.show} onHide={close} container={this} aria-labelledby="contained-modal-title">
+                        <form onSubmit={this.saveTask}>
+                            <Modal.Header>
+                                <Modal.Title>Add task</Modal.Title>
+                            </Modal.Header>
+
+                            <Modal.Body>
+
+                                    <div className="modal-body">
+                                        <input type="text" value={this.value} onChange={this.handleChange} className="form-control" />
+                                    </div>
+
+                            </Modal.Body>
+
+                            <Modal.Footer>
+                                <Button onClick={close}>Close</Button>
+                                <Button type="submit" bsStyle="primary" onClick={(e) => this.saveTask(e)}>Save Task</Button>
+                            </Modal.Footer>
+                        </form>
+                    </Modal>
                 </div>
             </div>
         );
