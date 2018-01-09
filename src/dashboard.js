@@ -1,6 +1,7 @@
 import React from 'react';
 import './dashboard.css';
 import Task from './task.js';
+import Calendar from './calendar.js';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 class Dashboard extends React.Component {
@@ -46,7 +47,7 @@ class Dashboard extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="whitebox largebox">
-
+                                        <Calendar />
                                     </div>
                                 </div>
                             </div>
