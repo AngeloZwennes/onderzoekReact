@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
                             <div className="row">
                                 <div className="col-sm-6 ">
                                     <div className="box1 toprow">
-
+                                        <Photo />
                                     </div>
                                 </div>
                                 <div className="col-sm-6" >
@@ -38,6 +38,8 @@ class Dashboard extends React.Component {
                                 </div>
                                 <div className="col-sm-6" >
                                     <div className="whitebox bottomrow"><Task /></div>
+                                <div className="col-sm-6 whitebox bottomrow" >
+                                    <Task />
                                 </div>
                             </div>
                         </div>
